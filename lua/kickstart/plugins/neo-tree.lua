@@ -17,4 +17,13 @@ require('neo-tree').setup {
       },
     },
   },
+
+  event_handlers = {
+    {
+      event = "file_opened",
+      handler = function(_)
+        require("neo-tree.command").execute({ action = "close" })
+      end
+    },
+  },
 }
